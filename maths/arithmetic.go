@@ -1,7 +1,7 @@
 package maths
 
 import (
-	"core"
+	"go-core"
 	"math"
 )
 

@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"core"
+	"go-core"
 	"testing"
 )
 

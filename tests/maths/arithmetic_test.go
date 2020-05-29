@@ -1,8 +1,8 @@
 package maths
 
 import (
-	"core/maths"
 	"fmt"
+	"go-core/maths"
 	"testing"
 )
 
