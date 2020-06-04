@@ -1,14 +1,14 @@
 package maths
 
 /**
-Vector of int
+Vector64 of int
 */
-type Vector []float64
+type Vector64 []float64
 
 /**
 Verifies that two vectors are equal (deep equal)
 */
-func (v *Vector) Equals(b Vector) bool {
+func (v *Vector64) Equals(b Vector64) bool {
 	if len(*v) != len(b) {
 		return false
 	}
@@ -26,6 +26,6 @@ func (v *Vector) Equals(b Vector) bool {
 /**
 Push new value into the vector
 */
-func (v *Vector) Push(val float64) {
+func (v *Vector64) Push(val float64) {
 	*v = append(*v, val)
 }

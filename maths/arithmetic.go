@@ -20,11 +20,11 @@ func Cube(x float64) float64 {
 }
 
 /**
-Mean of a Vector (array of float64's)
+Mean of a Vector64 (array of float64's)
 */
-func Mean(array Vector) float64 {
-	l := float64(len(array))
-	var s float64
+func Mean(array Vector32) float32 {
+	l := float32(len(array))
+	var s float32
 	for i := range array {
 		s += array[i] / l
 	}
@@ -42,7 +42,7 @@ func Transpose(matrix Matrix) Matrix {
 
 	newMatrix := Matrix{}
 	for core.InRangeAsc(&i, n) {
-		vector := Vector{}
+		vector := Vector32{}
 		j := 0
 		for core.InRangeAsc(&j, m) {
 			vector = append(vector, matrix[j-1][i-1])

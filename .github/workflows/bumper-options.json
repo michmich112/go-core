@@ -1,0 +1,18 @@
+{
+  "scheme": "semantic",
+  "versionFile": "./version.go",
+  "files": [],
+  "rules": [
+    {
+      "trigger": "commit",
+      "bump": "build",
+      "branch": "master"
+    },
+    {
+      "trigger": "commit",
+      "bump": "minor",
+      "branch": "release",
+      "reset": "build"
+    }
+  ]
+}

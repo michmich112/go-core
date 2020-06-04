@@ -7,7 +7,7 @@ import (
 /**
 Matrix of dimension 2 type for input elements
 */
-type Matrix []Vector
+type Matrix []Vector32
 
 /**
 Creates a new identity matrix
@@ -47,8 +47,8 @@ func (m *Matrix) Equals(b Matrix) bool {
 /**
 Add vector to matrix
 */
-func (m *Matrix) AddVector(v Vector) (mat Matrix, err error) {
-	if len((*m)[0]) != len(v) {
+func (m *Matrix) AddVector(v Vector32) (mat Matrix, err error) {
+	if len(*m) > 0 && len((*m)[0]) != len(v) {
 		return *m, errors.New("Size Match error")
 	}
 	*m = append(*m, v)

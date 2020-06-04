@@ -1,0 +1,18 @@
+name: Manage versions
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Bump Versions
+        uses: michmich112/version-bumper@v1.0.1
+        with:
+          options-file: "./.github/workflows/bumper-options.json"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
