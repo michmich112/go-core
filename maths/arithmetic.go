@@ -51,3 +51,19 @@ func Transpose(matrix Matrix) Matrix {
 	}
 	return newMatrix
 }
+
+/**
+Get minimum and maximum of an array of Float32's
+*/
+func MinMaxF32(vals ...float32) (min float32, max float32) {
+	min, max = vals[0], vals[0]
+	for i := 1; i < len(vals); i++ {
+		if vals[i] < min {
+			min = vals[i]
+		}
+		if vals[i] > max {
+			max = vals[i]
+		}
+	}
+	return min, max
+}

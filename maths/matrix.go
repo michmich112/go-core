@@ -62,3 +62,28 @@ func (m *Matrix) Transpose() Matrix {
 	*m = Transpose(*m)
 	return *m
 }
+
+/**
+Values range Struct
+*/
+type Range struct {
+	Min float32
+	Max float32
+}
+
+/**
+Get The Range of values of the vectors in the matrix
+*/
+func (m *Matrix) GetValueRange() []Range {
+	if len(*m) < 1 {
+		return nil
+	}
+	t := Transpose(*m)
+	l := len(t) // length of the vectors
+	var r = make([]Range, l)
+	for i := 0; i < l; i++ {
+		min, max := MinMaxF32(t[i]...)
+		r[i] = Range{min, max}
+	}
+	return r
+}
